@@ -11,12 +11,6 @@
 
   "forwardPorts": [8000, 5678],
 
-  "features": {
-    "ghcr.io/devcontainers/features/git:1": {},
-    "ghcr.io/devcontainers/features/gh:1": {},
-    "ghcr.io/devcontainers/features/node:1": { "version": "lts" }
-  },
-
   "customizations": {
     "vscode": {
       "extensions": [
