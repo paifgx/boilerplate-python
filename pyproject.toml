@@ -16,12 +16,12 @@ app = "app.main:cli"
 
 [project.optional-dependencies]
 dev = [
-  "ruff>=0.4",
-  "black>=24.0",
-  "mypy>=1.10",
-  "pre-commit>=3.7",
-  "pytest>=8.2",
-  "pytest-cov>=5.0"
+  "ruff",
+  "black",
+  "mypy",
+  "pre-commit",
+  "pytest",
+  "pytest-cov"
 ]
 
 # uv settings (lockfile reproducibility)
