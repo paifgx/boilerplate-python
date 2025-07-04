@@ -25,6 +25,6 @@
       }
     }
   },
-  "postCreateCommand": "uv pip install --system --editable . && pre-commit install",
+  "postCreateCommand": "uv venv -p3.12 && uv pip install --editable . && pre-commit install",
   "runArgs": ["--init"]
 }
