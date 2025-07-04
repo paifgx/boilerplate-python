@@ -39,6 +39,9 @@ ARG USERNAME=vscode
 ARG UID=1000
 RUN useradd -m -u ${UID} -s /bin/bash ${USERNAME}
 
+# Ensure workspace directory is writable by the non-root user
+RUN mkdir -p /workspace && chown -R ${USERNAME}:${USERNAME} /workspace
+
 # Arbeitsverzeichnis, Quellcode & Dev-Tools
 WORKDIR /workspace
 COPY --chown=${UID}:${UID} . .
