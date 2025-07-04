@@ -6,6 +6,7 @@
     "target": "dev"
   },
   "workspaceFolder": "/workspace",
+  "workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind,consistency=cached",
   "remoteUser": "vscode",
   "forwardPorts": [
     8000,
@@ -30,7 +31,7 @@
       }
     }
   },
-  "postCreateCommand": "uv venv -p3.12 && uv pip install --editable . && pre-commit install",
+  "postCreateCommand": "uv venv -p3.12 && uv pip install --editable .[dev] && git config --global --add safe.directory /workspace && uv run pre-commit install",
   "runArgs": [
     "--init"
   ]

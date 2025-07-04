@@ -20,11 +20,10 @@ repos:
     rev: v1.10.0
     hooks:
       - id: mypy
-        additional_dependencies: [types-all]
         exclude: ^tests/
 
   - repo: https://github.com/commitizen-tools/commitizen
     rev: v3.20.0
     hooks:
       - id: commitizen
-        stages: [commit-msg] 
+        stages: [commit-msg]

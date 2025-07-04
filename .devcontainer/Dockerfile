@@ -8,7 +8,9 @@ FROM python:3.12-slim-bookworm AS builder
 ENV PYTHONUNBUFFERED=1 \
     PIP_DISABLE_PIP_VERSION_CHECK=1 \
     PIP_NO_CACHE_DIR=1 \
-    DEBIAN_FRONTEND=noninteractive
+    DEBIAN_FRONTEND=noninteractive \
+    UV_LINK_MODE=copy \
+    UV_OVERRIDE_PYTHON_VERSION=3.12.0
 
 # System-Dependencies für Build
 RUN apt-get update \
