@@ -1,16 +1,13 @@
 {
   "name": "python312-uv",
-
   "build": {
     "dockerfile": "Dockerfile",
     "context": "..",
-    "args": { "VARIANT": "3.12" }
+    "target": "dev"
   },
-
   "workspaceFolder": "/workspace",
-
+  "remoteUser": "vscode",
   "forwardPorts": [8000, 5678],
-
   "customizations": {
     "vscode": {
       "extensions": [
@@ -21,15 +18,13 @@
         "mhutchie.git-graph"
       ],
       "settings": {
-        "python.defaultInterpreterPath": "/usr/local/bin/python",
+        "python.defaultInterpreterPath": "/usr/local/bin/python3",
         "editor.formatOnSave": true,
         "python.analysis.typeCheckingMode": "basic",
         "files.exclude": { "**/__pycache__": true }
       }
     }
   },
-
   "postCreateCommand": "uv pip install --system --editable . && pre-commit install",
-
   "runArgs": ["--init"]
-} 
+}
